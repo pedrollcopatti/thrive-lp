@@ -35,8 +35,16 @@ import Paragraph from "@/components/Paragraph";
 import Header from "@/components/Header";
 import Image from "next/image";
 import { COMPANIES, PARTNERS } from "@/constants";
+import ills from "@assets/illustration.svg";
+import funil from "@assets/funil.png";
+import Texture from "@/components/Texture";
+import puzzle from "@assets/puzzle.svg"
+import chart from "@assets/chart.svg"
+import { motion } from "framer-motion";
+import { goTo } from "@/utils";
 
 export default function Home() {
+  const MotionButton = motion(Button)
   return (
     <>
       <Head>
@@ -45,10 +53,15 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Stack spacing={24} bgColor={"black.500"} width={"100%"}>
+      <Stack  bgColor={"black.500"} width={"100%"}>
+        <Texture/>
         <Header />
-        <Stack direction={"row"}>
-          <Stack paddingX={20} spacing={4} width="50%">
+        <Stack
+          alignItems={"center"}
+          width={"100%"}
+          direction={"row"}
+        >
+          <Stack paddingX={20} spacing={6} width="50%">
             <H1>
               Geração de Leads <br /> para times comerciais
             </H1>
@@ -56,18 +69,39 @@ export default function Home() {
               Garantimos que o seu time de vendas receba um caminhão de demanda,
               todos os dias e foque apenas no que realmente importa... vender.
             </Paragraph>
-            <Button
-              marginTop={12}
-              colorScheme="orange"
-              borderRadius={0}
-              color={"white"}
-              maxW={"20rem"}
-            >
-              RECEBER PROPOSTA EM 5 MIN
-            </Button>
+            <MotionButton
+          whileHover={{
+            x: 10
+           
+          }}
+            _hover={{
+              background: 'orange.500'
+            }}
+            borderRadius={8}
+            colorScheme="orange"
+            size={"lg"}
+            border={'1px solid rgba(255, 255, 255, 0.50)'}
+            background={'linear-gradient(92deg, #D94B00 0%, #FF5800 50.52%, #BE4200 100%)'}
+            color={"white.500"}
+            backgroundColor={'orange.500'}
+            fontWeight={'bold'}
+            maxWidth={"20rem"}
+          >
+            RECEBER PROPOSTA EM 5 MIN
+          </MotionButton>
           </Stack>
+          <Flex
+            maxW={"45rem"}
+            marginTop={-12}
+            alignItems={"center"}
+            justifyContent={"center"}
+            paddingTop={12}
+            width={"60%"}
+          >
+            <Image alt="illustration" src={ills} />
+          </Flex>
         </Stack>
-        <Stack paddingX={20} width={"100%"}>
+        <Stack marginTop={24} paddingX={20} width={"100%"}>
           <Divider
             borderColor={"white.500"}
             borderWidth={2}
@@ -107,7 +141,15 @@ export default function Home() {
             borderRadius={"full"}
           />
         </Stack>
-        <Stack paddingX={20} direction={"row"} width={"100%"}>
+        <Stack
+          justifyContent={"space-between"}
+          alignItems={"center"}
+          paddingX={20}
+          direction={"row"}
+          width={"100%"}
+          marginTop={24}
+          id='entrega'
+        >
           <Stack spacing={6}>
             <H1 maxWidth={"30rem"}>
               Atraia, Envolva, Conquiste e Retenha. Conheça nosso FUNIL DE
@@ -121,8 +163,26 @@ export default function Home() {
               envolvente.
             </Paragraph>
           </Stack>
+          <Flex
+            maxW={"35rem"}
+            marginTop={-12}
+            alignItems={"center"}
+            justifyContent={"center"}
+            paddingTop={12}
+            width={"50%"}
+          >
+            <Image alt="funil" src={funil} />
+          </Flex>
         </Stack>
-        <Stack paddingX={20}>
+        <Stack
+          justifyContent={"space-between"}
+          alignItems={"center"}
+          paddingX={20}
+          direction={"row-reverse"}
+          width={"100%"}
+          marginTop={32}
+          id='thrive'
+        >
           <Stack spacing={6}>
             <Badge
               colorScheme="orange"
@@ -130,7 +190,7 @@ export default function Home() {
               width={"fit-content"}
               fontSize={"sm"}
             >
-              A THRIVE
+              THRIVE
             </Badge>
             <H1 fontSize={"4xl"} maxW={"45rem"}>
               Somos a peça que falta no seu quebra-cabeça de marketing.
@@ -144,8 +204,27 @@ export default function Home() {
               ideias certas se conectam, tudo é possível.
             </Paragraph>
           </Stack>
+          <Flex
+            maxW={"35rem"}
+            alignItems={"center"}
+            justifyContent={"center"}
+            paddingTop={12}
+            width={"50%"}
+            position={'relative'}
+          >
+            <Flex left={-36} position={'absolute'}>
+            <Image alt="puzzle" src={puzzle} />
+            </Flex>
+          </Flex>
         </Stack>
-        <Stack direction={"row-reverse"} paddingX={20}>
+        <Stack
+          justifyContent={"space-between"}
+          alignItems={"center"}
+          paddingX={20}
+          direction={"row"}
+          width={"100%"}
+          marginTop={24}
+        >
           <Stack spacing={6}>
             <H1 fontSize={"4xl"} maxW={"40rem"}>
               Sem enrolação. Alto impacto. Nenhum centavo desperdiçado.
@@ -156,24 +235,44 @@ export default function Home() {
               refinar o manual de crescimento que criamos para o seu negócio.
             </Paragraph>
           </Stack>
+          <Flex
+            maxW={"35rem"}
+            alignItems={"center"}
+            justifyContent={"center"}
+            paddingTop={12}
+            width={"50%"}
+          >
+            <Image alt="chart" src={chart} />
+          </Flex>
         </Stack>
-        <Stack width={"100%"} alignItems={"center"}>
-          <Button
+        <Stack marginTop={-12} width={"100%"} alignItems={"center"}>
+          <MotionButton
+          whileHover={{
+            scale: 1.05,
+           
+          }}
+            _hover={{
+              background: 'orange.500'
+            }}
+            borderRadius={8}
             colorScheme="orange"
-            borderRadius={0}
             size={"lg"}
+            border={'1px solid rgba(255, 255, 255, 0.50)'}
+            background={'linear-gradient(92deg, #D94B00 0%, #FF5800 50.52%, #BE4200 100%)'}
             color={"white.500"}
+            backgroundColor={'orange.500'}
+            fontWeight={'bold'}
             maxWidth={"30rem"}
           >
             FALE COM UM ESPECIALISTA
-          </Button>
+          </MotionButton>
         </Stack>
-
         <Stack
           spacing={12}
           width={"100%"}
           alignItems={"center"}
           justifyContent={"center"}
+          marginTop={32}
         >
           <Stack spacing={6}>
             <H1>Início da sua jornada na Thrive</H1>
@@ -188,7 +287,7 @@ export default function Home() {
             alignItems={"center"}
             justifyContent={"center"}
             boxSize={"fit-content"}
-            spacing={2}
+            spacing={6}
             columns={2}
           >
             <Stack
@@ -275,6 +374,7 @@ export default function Home() {
           direction={"row"}
           paddingX={20}
           width={"100%"}
+          marginTop={32 }
         >
           <Stack spacing={6} width={"50%"}>
             <H1 fontWeight={"normal"} fontSize={"2xl"} maxW={"30rem"}>
@@ -313,7 +413,7 @@ export default function Home() {
             ))}
           </SimpleGrid>
         </Stack>
-        <Stack paddingX={20} spacing={12} alignItems={"center"} width={"100%"}>
+        <Stack marginTop={32} paddingX={20} spacing={12} alignItems={"center"} width={"100%"}>
           <Badge
             fontSize={"2xl"}
             paddingX={4}
@@ -333,22 +433,34 @@ export default function Home() {
             <Image width={300} alt="ex" src={ex} />
           </Stack>
         </Stack>
-        <Stack width={"100%"} alignItems={"center"}>
-          <Button
+        <Stack marginTop={24} width={"100%"} alignItems={"center"}>
+        <MotionButton
+          whileHover={{
+            scale: 1.05,
+           
+          }}
+            _hover={{
+              background: 'orange.500'
+            }}
+            borderRadius={8}
             colorScheme="orange"
-            borderRadius={0}
             size={"lg"}
+            border={'1px solid rgba(255, 255, 255, 0.50)'}
+            background={'linear-gradient(92deg, #D94B00 0%, #FF5800 50.52%, #BE4200 100%)'}
             color={"white.500"}
+            backgroundColor={'orange.500'}
+            fontWeight={'bold'}
             maxWidth={"30rem"}
           >
             FALE COM UM ESPECIALISTA
-          </Button>
+          </MotionButton>
         </Stack>
         <Stack
           alignItems={"end"}
           direction={"row"}
           justifyContent={"space-between"}
           paddingX={20}
+          marginTop={32}
         >
           <Stack spacing={6}>
             <HStack spacing={4}>
@@ -385,24 +497,31 @@ export default function Home() {
                 variant={"ghost"}
                 aria-label="instagram"
                 icon={<FaInstagram />}
+                onClick={()=> goTo('https://www.instagram.com/grupo.thrive/')}
               />
               <IconButton
                 size={"lg"}
                 variant={"ghost"}
-                aria-label="instagram"
+                aria-label="linkedin"
                 icon={<FaLinkedinIn />}
+                onClick={()=> goTo('https://www.linkedin.com/company/thrivebr/mycompany/')}
               />
               <IconButton
                 size={"lg"}
                 variant={"ghost"}
-                aria-label="instagram"
+                aria-label="yt"
                 icon={<FaYoutube />}
+                onClick={()=> goTo('https://www.youtube.com/@GrupoThrive')}
+
+
               />
               <IconButton
                 size={"lg"}
                 variant={"ghost"}
-                aria-label="instagram"
+                aria-label="spotify"
                 icon={<FaSpotify />}
+                onClick={()=> goTo('https://www.linkedin.com/company/thrivebr/')}
+
               />
             </SimpleGrid>
             <HStack>
@@ -417,14 +536,19 @@ export default function Home() {
               </Flex>
             </HStack>
           </Stack>
-
         </Stack>
-        <Stack spacing={6} paddingBottom={12} paddingX={20} alignItems={'center'}>
-          <Divider w={'100%'} borderWidth={0.5} borderColor={'white.500'}/>
-          <Paragraph fontSize={'x-small'}>
-          Desenvolvido por Pedro Copatti | © Thrive 2023 | Política de privacidade
+        <Stack
+          spacing={6}
+          paddingBottom={12}
+          paddingX={20}
+          alignItems={"center"}
+        >
+          <Divider w={"100%"} borderWidth={0.5} borderColor={"white.500"} />
+          <Paragraph fontSize={"x-small"}>
+            Desenvolvido por Pedro Copatti | © Thrive 2023 | Política de
+            privacidade
           </Paragraph>
-        </Stack> 
+        </Stack>
       </Stack>
     </>
   );
