@@ -202,6 +202,7 @@ export default function Home() {
               variant={"ghost"}
               colorScheme="orange"
               rightIcon={<FaCircleChevronRight />}
+              onClick={() => goTo("https://abre.ai/hGvz")}
             >
               Falar com a Thrive
             </Button>
@@ -255,6 +256,7 @@ export default function Home() {
               variant={"ghost"}
               colorScheme="orange"
               rightIcon={<FaCircleChevronRight />}
+              onClick={() => goTo("https://abre.ai/hGvz")}
             >
               Falar com a Thrive
             </Button>
@@ -319,6 +321,7 @@ export default function Home() {
             backgroundColor={"orange.500"}
             fontWeight={"bold"}
             maxWidth={"30rem"}
+            onClick={() => goTo("https://abre.ai/hGvz")}
           >
             FALE COM UM ESPECIALISTA
           </MotionButton>
@@ -515,6 +518,7 @@ export default function Home() {
             backgroundColor={"orange.500"}
             fontWeight={"bold"}
             maxWidth={"30rem"}
+            onClick={() => goTo("https://abre.ai/hGvz")}
           >
             FALE COM UM ESPECIALISTA
           </MotionButton>

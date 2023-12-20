@@ -3,6 +3,7 @@ import { Button, Flex, HStack } from "@chakra-ui/react";
 import logo from "@assets/logo.svg";
 import Image from "next/image";
 import { Link } from "react-scroll";
+import { goTo } from "@/utils";
 
 export default function Header() {
   return (
@@ -52,6 +53,7 @@ export default function Header() {
           color={"white.500"}
           backgroundColor={"orange.500"}
           fontWeight={"bold"}
+          onClick={() => goTo("https://abre.ai/hGvz")}
         >
           FALAR COM A THRIVE
         </Button>
