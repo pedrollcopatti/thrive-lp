@@ -9,6 +9,7 @@ import {
   IconButton,
   SimpleGrid,
   Stack,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import {
   FaLinkedinIn,
@@ -25,8 +26,7 @@ import metaBusiness from "@assets/meta_business.png";
 import metaCertified from "@assets/meta_certified.png";
 import learning from "@assets/learning.svg";
 import growth_cicle from "@assets/growth_cicle.svg";
-import ex from "@assets/ex.png";
-import exDois from "@assets/ex_dois.png";
+import mosaic from "@assets/mosaic.png";
 import H1 from "@/components/H1";
 import Paragraph from "@/components/Paragraph";
 import Header from "@/components/Header";
@@ -42,6 +42,7 @@ import { goTo } from "@/utils";
 
 export default function Home() {
   const MotionButton = motion(Button);
+  const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
   return (
     <>
       <Head>
@@ -81,21 +82,36 @@ export default function Home() {
         <meta property="og:url" content="https://www.grupothrive.com/" />
         <meta property="og:type" content="website" />
       </Head>
-      <Stack paddingX={12} bgColor={"black.500"} width={"100%"}>
-        <Texture />
+      <Texture />
+      <Stack
+        paddingX={[4, 2, 4, 6, 8, 12]}
+        bgColor={"black.500"}
+        width={"100%"}
+      >
         <Header />
         <Stack
           justifyContent={"space-between"}
           alignItems={"center"}
           width={"100%"}
-          direction={"row"}
+          direction={isLargerThan1000 ? "row" : "column"}
           overflow={"hidden"}
+          height={isLargerThan1000 ? "35rem" : "fit-content"}
+          marginTop={isLargerThan1000 ? 0 : [8, 12, 12, 18]}
         >
-          <Stack paddingX={24} spacing={6} width="50%">
-            <H1>
+          <Stack
+            alignItems={isLargerThan1000 ? "initial" : "center"}
+            textAlign={isLargerThan1000 ? "initial" : "center"}
+            paddingX={[4, 6, 8, 12, 18, 24]}
+            spacing={isLargerThan1000 ? 6 : 8}
+            width={isLargerThan1000 ? "45%" : "100%"}
+          >
+            <H1 fontSize={["2xl", "3xl", "3xl"]}>
               Geração de Leads <br /> para times comerciais
             </H1>
-            <Paragraph maxWidth={"35rem"}>
+            <Paragraph
+              fontSize={["sm", "md"]}
+              maxWidth={isLargerThan1000 ? "100%" : ["90%", "80%", "60%"]}
+            >
               Garantimos que o seu time de vendas receba um caminhão de demanda,
               todos os dias e foque apenas no que realmente importa... vender.
             </Paragraph>
@@ -108,7 +124,7 @@ export default function Home() {
               }}
               borderRadius={8}
               colorScheme="orange"
-              size={"lg"}
+              size={["sm", "sm", "md", "md", "lg"]}
               border={"1px solid rgba(255, 255, 255, 0.50)"}
               background={
                 "linear-gradient(92deg, #D94B00 0%, #FF5800 50.52%, #BE4200 100%)"
@@ -122,36 +138,42 @@ export default function Home() {
             </MotionButton>
           </Stack>
           <Flex
-            maxW={"45rem"}
-            marginTop={-12}
+            maxW={isLargerThan1000 ? "45rem" : "100%"}
+            marginTop={isLargerThan1000 ? -12 : [-12, -24, -32]}
             alignItems={"center"}
             justifyContent={"center"}
             paddingTop={12}
-            width={"60%"}
+            width={isLargerThan1000 ? "60%" : ["100%", "85%"]}
+            position={isLargerThan1000 ? "absolute" : "initial"}
+            right={0}
           >
             <Image alt="illustration" src={ills} />
           </Flex>
         </Stack>
-        <Stack marginTop={24} paddingX={24} width={"100%"}>
+        <Stack
+          marginTop={[6, 8, 12, 18, 24]}
+          paddingX={[4, 6, 8, 12, 18, 24]}
+          width={"100%"}
+        >
           <Divider
             borderColor={"white.500"}
-            borderWidth={2}
+            borderWidth={0.5}
             borderRadius={"full"}
             marginBottom={12}
           />
-          <H1>
+          <H1 fontSize={["lg", "xl", "2xl", "3xl"]}>
             O Parceiro de Geração de Demanda <br />
             das marcas mais conhecidas:
           </H1>
           <Stack marginTop={8} spacing={12}>
-            <Paragraph fontSize={"xl"}>
+            <Paragraph fontSize={["md", "lg", "xl"]}>
               Mais de 15 milhões gerenciados em mídia
             </Paragraph>
             <SimpleGrid
               width={"100%"}
               alignItems={"center"}
               spacing={6}
-              columns={4}
+              columns={[2, 2, 4, 4, 4]}
             >
               {COMPANIES.map((comp, index) => (
                 <Flex justifyContent={"center"} key={index}>
@@ -168,25 +190,25 @@ export default function Home() {
           <Divider
             marginTop={12}
             borderColor={"white.500"}
-            borderWidth={2}
+            borderWidth={0.5}
             borderRadius={"full"}
           />
         </Stack>
         <Stack
           justifyContent={"space-between"}
           alignItems={"center"}
-          paddingX={24}
-          direction={"row"}
+          paddingX={[4, 6, 8, 12, 18, 24]}
+          direction={isLargerThan1000 ? "row" : "column"}
           width={"100%"}
-          marginTop={24}
+          marginTop={[6, 8, 12, 18, 24]}
           id="entrega"
         >
           <Stack spacing={6}>
-            <H1 maxWidth={"30rem"}>
+            <H1 fontSize={["xl", "2xl", "3xl", "3xl"]} maxWidth={"30rem"}>
               Atraia, Envolva, Conquiste e Retenha. Conheça nosso FUNIL DE
               MARKETING INTELIGENTE
             </H1>
-            <Paragraph fontSize={"lg"} maxWidth={"35rem"}>
+            <Paragraph fontSize={["sm", "md", "lg", "lg"]} maxWidth={"35rem"}>
               Se você deseja transformar visitantes em clientes fiéis, você está
               no lugar certo. No coração de nossa estratégia de sucesso está o
               Funil de Marketing, uma abordagem meticulosamente planejada para
@@ -201,6 +223,7 @@ export default function Home() {
               width={"fit-content"}
               variant={"ghost"}
               colorScheme="orange"
+              alignItems={"center"}
               rightIcon={<FaCircleChevronRight />}
               onClick={() => goTo("https://abre.ai/hGvz")}
             >
@@ -209,11 +232,11 @@ export default function Home() {
           </Stack>
           <Flex
             maxW={"35rem"}
-            marginTop={-12}
+            marginTop={isLargerThan1000 ? -12 : -24}
             alignItems={"center"}
             justifyContent={"center"}
             paddingTop={12}
-            width={"50%"}
+            width={isLargerThan1000 ? "50%" : "80%"}
           >
             <Image alt="funil" src={funil} />
           </Flex>
@@ -221,10 +244,10 @@ export default function Home() {
         <Stack
           justifyContent={"space-between"}
           alignItems={"center"}
-          paddingX={24}
-          direction={"row-reverse"}
+          paddingX={[4, 6, 8, 12, 18, 24]}
+          direction={isLargerThan1000 ? "row-reverse" : "column"}
           width={"100%"}
-          marginTop={32}
+          marginTop={[18, 24, 32]}
           id="thrive"
         >
           <Stack spacing={6}>
@@ -236,10 +259,13 @@ export default function Home() {
             >
               THRIVE
             </Badge>
-            <H1 fontSize={"4xl"} maxW={"45rem"}>
+            <H1
+              fontSize={["xl", "2xl", "3xl", "3xl"]}
+              maxW={isLargerThan1000 ? "45rem" : "30rem"}
+            >
               Somos a peça que falta no seu quebra-cabeça de marketing.
             </H1>
-            <Paragraph fontSize={"lg"} maxWidth={"35rem"}>
+            <Paragraph fontSize={["sm", "md", "lg", "lg"]} maxWidth={"35rem"}>
               Quando você faz parceria com a Thrive, você obtém um esquadrão de
               crescimento personalizado de especialistas comprovados que
               entendem seu negócio e estão comprometidos em alcançar um
@@ -266,7 +292,8 @@ export default function Home() {
             alignItems={"center"}
             justifyContent={"center"}
             paddingTop={12}
-            width={"50%"}
+            marginTop={isLargerThan1000 ? 0 : 24}
+            width={isLargerThan1000 ? "50%" : "100%"}
             position={"relative"}
           >
             <Flex left={-36} position={"absolute"}>
@@ -277,16 +304,19 @@ export default function Home() {
         <Stack
           justifyContent={"space-between"}
           alignItems={"center"}
-          paddingX={24}
-          direction={"row"}
+          paddingX={[4, 6, 8, 12, 18, 24]}
+          direction={isLargerThan1000 ? "row" : "column"}
           width={"100%"}
-          marginTop={24}
+          marginTop={isLargerThan1000 ? 24 : 36}
         >
           <Stack spacing={6}>
-            <H1 fontSize={"4xl"} maxW={"40rem"}>
+            <H1
+              fontSize={["xl", "2xl", "3xl", "3xl"]}
+              maxW={isLargerThan1000 ? "40rem" : "30rem"}
+            >
               Sem enrolação. Alto impacto. Nenhum centavo desperdiçado.
             </H1>
-            <Paragraph fontSize={"lg"} maxWidth={"35rem"}>
+            <Paragraph fontSize={["sm", "md", "lg", "lg"]} maxWidth={"35rem"}>
               Estamos hiperfocados em aumentar sua receita. Aproveitamos o
               aprendizado de milhares de experimentos com marcas de sucesso para
               refinar o manual de crescimento que criamos para o seu negócio.
@@ -296,8 +326,8 @@ export default function Home() {
             maxW={"35rem"}
             alignItems={"center"}
             justifyContent={"center"}
-            paddingTop={12}
-            width={"50%"}
+            paddingTop={isLargerThan1000 ? 12 : 4}
+            width={isLargerThan1000 ? "50%" : "80%"}
           >
             <Image alt="chart" src={chart} />
           </Flex>
@@ -312,7 +342,7 @@ export default function Home() {
             }}
             borderRadius={8}
             colorScheme="orange"
-            size={"lg"}
+            size={["sm", "md", "lg"]}
             border={"1px solid rgba(255, 255, 255, 0.50)"}
             background={
               "linear-gradient(92deg, #D94B00 0%, #FF5800 50.52%, #BE4200 100%)"
@@ -331,11 +361,13 @@ export default function Home() {
           width={"100%"}
           alignItems={"center"}
           justifyContent={"center"}
-          marginTop={32}
+          marginTop={[16, 24, 32]}
         >
           <Stack spacing={6}>
-            <H1>Início da sua jornada na Thrive</H1>
-            <Paragraph maxWidth={"35rem"}>
+            <H1 fontSize={["xl", "2xl", "3xl", "3xl"]}>
+              Início da sua jornada na Thrive
+            </H1>
+            <Paragraph fontSize={["sm", "md", "lg", "lg"]} maxWidth={"35rem"}>
               A Thrive conta com profissionais que, além da alta qualidade de
               entrega, atuam com um número limitado de contas, oferecendo a
               atenção que você merece
@@ -347,7 +379,7 @@ export default function Home() {
             justifyContent={"center"}
             boxSize={"fit-content"}
             spacing={6}
-            columns={2}
+            columns={[1, 1, 1, 2, 2, 2]}
           >
             <Stack
               spacing={6}
@@ -361,8 +393,8 @@ export default function Home() {
             >
               <Image alt="onboarding" src={onboarding} />
               <Stack>
-                <H1 fontSize={"2xl"}>Onboarding</H1>
-                <Paragraph maxW={"25rem"}>
+                <H1 fontSize={["md", "lg", "xl", "2xl"]}>Onboarding</H1>
+                <Paragraph fontSize={["sm", "md", "md", "md"]} maxW={"25rem"}>
                   Nosso time de especialistas implementa ações que trarão ganhos
                   de curto prazo, enquanto estrutura seu plano de otimização
                   para o longo prazo
@@ -381,8 +413,8 @@ export default function Home() {
             >
               <Image alt="onboarding" src={diagnosis} />
               <Stack>
-                <H1 fontSize={"2xl"}>Diagnóstico</H1>
-                <Paragraph maxW={"25rem"}>
+                <H1 fontSize={["md", "lg", "xl", "2xl"]}>Diagnóstico</H1>
+                <Paragraph fontSize={["sm", "md", "md", "md"]} maxW={"25rem"}>
                   Analisamos o seu caso e apresentamos um projeto feito sob
                   medida para sua operação
                 </Paragraph>
@@ -400,8 +432,8 @@ export default function Home() {
             >
               <Image alt="onboarding" src={learning} />
               <Stack>
-                <H1 fontSize={"2xl"}>Aprendizado</H1>
-                <Paragraph maxW={"25rem"}>
+                <H1 fontSize={["md", "lg", "xl", "2xl"]}>Aprendizado</H1>
+                <Paragraph fontSize={["sm", "md", "md", "md"]} maxW={"25rem"}>
                   Validamos as ações implementadas e estudamos próximos passos
                 </Paragraph>
               </Stack>
@@ -418,8 +450,10 @@ export default function Home() {
             >
               <Image alt="onboarding" src={growth_cicle} />
               <Stack>
-                <H1 fontSize={"2xl"}>Ciclo de crescimento</H1>
-                <Paragraph maxW={"25rem"}>
+                <H1 fontSize={["md", "lg", "xl", "2xl"]}>
+                  Ciclo de crescimento
+                </H1>
+                <Paragraph fontSize={["sm", "md", "md", "md"]} maxW={"25rem"}>
                   Otimização e escala contínua dos resultados de sua operação de
                   mídia feita pelos especialistas da Thrive.
                 </Paragraph>
@@ -430,35 +464,47 @@ export default function Home() {
         <Stack
           align={"center"}
           justifyContent={"space-between"}
-          direction={"row"}
-          paddingX={24}
+          direction={isLargerThan1000 ? "row" : "column"}
+          paddingX={[4, 6, 8, 12, 18, 24]}
           width={"100%"}
-          marginTop={32}
+          marginTop={[16, 24, 32]}
         >
-          <Stack spacing={6} width={"50%"}>
-            <H1 fontWeight={"normal"} fontSize={"2xl"} maxW={"30rem"}>
+          <Stack
+            alignItems={"center"}
+            textAlign={isLargerThan1000 ? "initial" : "center"}
+            spacing={6}
+            width={isLargerThan1000 ? "50%" : "100%"}
+          >
+            <H1
+              fontWeight={"normal"}
+              fontSize={["lg", "xl", "2xl", "3xl"]}
+              maxW={"30rem"}
+            >
               As parcerias e conhecimentos que impulsionam o seu crescimento
             </H1>
-            <Paragraph maxW={"30rem"}>
+            <Paragraph fontSize={["sm", "md", "lg", "lg"]} maxW={"30rem"}>
               Somos parceiros das melhores plataformas, garantindo a eficiència
               do seu investimento que levarão a sua empresa para o próximo
               nível.
             </Paragraph>
           </Stack>
-          <Flex width={"10%"} align={"center"} justifyContent={"center"}>
-            <Box
-              height={"12rem"}
-              width={0.5}
-              backgroundImage={
-                "linear-gradient(0deg, #F7931E 0%, rgba(247, 147, 30, 0.00) 0%, #F7931E 52.08%, rgba(247, 147, 30, 0.00) 100%);"
-              }
-            />
-          </Flex>
+          {isLargerThan1000 && (
+            <Flex width={"10%"} align={"center"} justifyContent={"center"}>
+              <Box
+                height={"12rem"}
+                width={0.5}
+                backgroundImage={
+                  "linear-gradient(0deg, #F7931E 0%, rgba(247, 147, 30, 0.00) 0%, #F7931E 52.08%, rgba(247, 147, 30, 0.00) 100%);"
+                }
+              />
+            </Flex>
+          )}
           <SimpleGrid
-            width={"50%"}
+            width={isLargerThan1000 ? "50%" : "100%"}
             alignItems={"center"}
             spacing={8}
             columns={3}
+            marginTop={isLargerThan1000 ? 0 : 12}
           >
             {PARTNERS.map((comp, index) => (
               <Flex justifyContent={"center"} key={index}>
@@ -473,14 +519,14 @@ export default function Home() {
           </SimpleGrid>
         </Stack>
         <Stack
-          marginTop={32}
-          paddingX={24}
+          marginTop={[16, 24, 32]}
+          paddingX={[4, 6, 8, 12, 18, 24]}
           spacing={12}
           alignItems={"center"}
           width={"100%"}
         >
           <Badge
-            fontSize={"xl"}
+            fontSize={['md', 'lg', 'xl']}
             paddingX={6}
             paddingY={2}
             borderRadius={4}
@@ -490,14 +536,9 @@ export default function Home() {
           >
             ESTÚDIOS THRIVE
           </Badge>
-          <Stack direction={"row"}>
-            <Image width={300} alt="ex" src={ex} />
-            <Stack>
-              <Image width={430} alt="ex-dois" src={exDois} />
-              <Image width={430} alt="ex-dois" src={exDois} />
-            </Stack>
-            <Image width={300} alt="ex" src={ex} />
-          </Stack>
+          <Flex width={["100%", "100%", "90%", "80%", "80%"]}>
+            <Image alt="moisac" src={mosaic} />
+          </Flex>
         </Stack>
         <Stack marginTop={24} width={"100%"} alignItems={"center"}>
           <MotionButton
@@ -509,7 +550,7 @@ export default function Home() {
             }}
             borderRadius={8}
             colorScheme="orange"
-            size={"lg"}
+            size={['md', 'lg']}
             border={"1px solid rgba(255, 255, 255, 0.50)"}
             background={
               "linear-gradient(92deg, #D94B00 0%, #FF5800 50.52%, #BE4200 100%)"
@@ -524,21 +565,22 @@ export default function Home() {
           </MotionButton>
         </Stack>
         <Stack
-          alignItems={"end"}
-          direction={"row"}
+          alignItems={isLargerThan1000 ? "end" : "start"}
+          direction={isLargerThan1000 ? "row" : "column"}
           justifyContent={"space-between"}
-          paddingX={24}
+          paddingX={[4, 6, 8, 12, 18, 24]}
           marginTop={32}
+          spacing={isLargerThan1000 ? 2 : 8}
         >
           <Stack spacing={6}>
-            <HStack spacing={4}>
+            <Stack direction={isLargerThan1000 ? "row" : "column"} spacing={4}>
               <Image width={125} alt="logo" src={logo} />
               <Paragraph fontSize={"sm"} maxW={"25rem"}>
                 Estamos sediados em Curitiba, com filial em Porto Alegre, mas
                 você também pode encontrar nossa equipe em São Paulo, Rio de
                 Janeiro e Fortaleza.
               </Paragraph>
-            </HStack>
+            </Stack>
             <Stack>
               <Paragraph fontWeight={"bold"}>Nossos escritórios</Paragraph>
               <Paragraph fontSize={"xs"}>
@@ -627,7 +669,7 @@ export default function Home() {
         <Stack
           spacing={6}
           paddingBottom={12}
-          paddingX={24}
+          paddingX={[4, 6, 8, 12, 18, 24]}
           alignItems={"center"}
         >
           <Divider w={"100%"} borderWidth={0.5} borderColor={"white.500"} />
