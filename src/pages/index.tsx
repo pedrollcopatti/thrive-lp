@@ -17,7 +17,9 @@ import {
   FaYoutube,
   FaSpotify,
   FaCircleChevronRight,
+  FaCircleChevronDown,
 } from "react-icons/fa6";
+import { GiTreasureMap, GiBattleTank, GiEyeTarget } from "react-icons/gi";
 import onboarding from "@assets/onboarding.svg";
 import diagnosis from "@assets/diagnosis.svg";
 import logo from "@assets/logo.svg";
@@ -41,6 +43,7 @@ import { motion } from "framer-motion";
 import { goTo } from "@/utils";
 
 export default function Home() {
+  const MotionBox = motion(Box);
   const MotionButton = motion(Button);
   const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
   return (
@@ -332,7 +335,191 @@ export default function Home() {
             <Image alt="chart" src={chart} />
           </Flex>
         </Stack>
-        <Stack marginTop={-12} width={"100%"} alignItems={"center"}>
+        <Stack
+          width={"100%"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          textAlign={"center"}
+          spacing={12}
+        >
+          <H1 fontSize={["2xl", "3xl", "4xl", "4xl"]}>Nossa metodologia</H1>
+          <Stack
+            direction={isLargerThan1000 ? "row" : "column"}
+            spacing={[4, 6, 8, 8, 12]}
+            alignItems={"center"}
+            justifyContent={"center"}
+          >
+            <MotionBox
+              initial={{
+                opacity: 0,
+                y: -10,
+              }}
+              viewport={{
+                once: true,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                backgroundColor: ["#F45400", "#111111"],
+                color: "white",
+                transition: {
+                  duration: 2,
+                  delay: 0.5,
+                },
+              }}
+              padding={8}
+              borderRadius={12}
+              textAlign={"initial"}
+              minW={"18rem"}
+            >
+              <IconButton
+                _hover={{
+                  backgroundColor: "black.50",
+                }}
+                fontSize={56}
+                aria-label="metodology"
+                color={"white"}
+                icon={<GiEyeTarget />}
+                variant={"ghost"}
+              />
+              <Stack marginTop={16}>
+                <H1 fontSize={["md", "lg", "xl", "2xl"]}>Diagnóstico</H1>
+                <Paragraph fontSize={["sm", "md", "md", "md"]} maxW={"25rem"}>
+                  Visão de negócio e definição de meta
+                </Paragraph>
+              </Stack>
+            </MotionBox>
+            <MotionBox
+              initial={{
+                opacity: 0,
+                y: -10,
+              }}
+              viewport={{
+                once: true,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                color: "white",
+                transition: {
+                  duration: 2,
+                  delay: 1,
+                },
+              }}
+            >
+              {isLargerThan1000 ? (
+                <FaCircleChevronRight color="white" size={24} />
+              ) : (
+                <FaCircleChevronDown color="white" size={24} />
+              )}
+            </MotionBox>
+            <MotionBox
+              initial={{
+                opacity: 0,
+                y: -5,
+              }}
+              viewport={{
+                once: true,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                backgroundColor: ["#F45400", "#111111"],
+                color: "white",
+                transition: {
+                  duration: 2,
+                  delay: 2.5,
+                },
+              }}
+              padding={8}
+              borderRadius={12}
+              textAlign={"initial"}
+              minW={"18rem"}
+            >
+              <IconButton
+                _hover={{
+                  backgroundColor: "black.50",
+                }}
+                fontSize={56}
+                aria-label="metodology"
+                color={"white"}
+                icon={<GiTreasureMap />}
+                variant={"ghost"}
+              />
+              <Stack marginTop={16}>
+                <H1 fontSize={["md", "lg", "xl", "2xl"]}>Plano de guerra</H1>
+                <Paragraph fontSize={["sm", "md", "md", "md"]} maxW={"25rem"}>
+                  Planejamento e definição de prazos
+                </Paragraph>
+              </Stack>
+            </MotionBox>
+            <MotionBox
+              initial={{
+                opacity: 0,
+                y: -10,
+              }}
+              viewport={{
+                once: true,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                color: "white",
+                transition: {
+                  duration: 2,
+                  delay: 3,
+                },
+              }}
+            >
+              {isLargerThan1000 ? (
+                <FaCircleChevronRight color="white" size={24} />
+              ) : (
+                <FaCircleChevronDown color="white" size={24} />
+              )}
+            </MotionBox>
+            <MotionBox
+              initial={{
+                opacity: 0,
+                y: -5,
+              }}
+              viewport={{
+                once: true,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                backgroundColor: ["#F45400", "#111111"],
+                color: "white",
+                transition: {
+                  duration: 2,
+                  delay: 4.5,
+                },
+              }}
+              padding={8}
+              borderRadius={12}
+              textAlign={"initial"}
+              minW={"18rem"}
+            >
+              <IconButton
+                _hover={{
+                  backgroundColor: "black.50",
+                }}
+                fontSize={56}
+                aria-label="metodology"
+                color={"white"}
+                icon={<GiBattleTank />}
+                variant={"ghost"}
+              />
+              <Stack marginTop={16}>
+                <H1 fontSize={["md", "lg", "xl", "2xl"]}>Campo de batalha</H1>
+                <Paragraph fontSize={["sm", "md", "md", "md"]} maxW={"25rem"}>
+                  Execução
+                </Paragraph>
+              </Stack>
+            </MotionBox>
+          </Stack>
+        </Stack>
+        <Stack marginTop={16} width={"100%"} alignItems={"center"}>
           <MotionButton
             whileHover={{
               scale: 1.05,
