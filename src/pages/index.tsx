@@ -341,6 +341,7 @@ export default function Home() {
           justifyContent={"center"}
           textAlign={"center"}
           spacing={12}
+          marginTop={-12}
         >
           <H1 fontSize={["2xl", "3xl", "4xl", "4xl"]}>Nossa metodologia</H1>
           <Stack
@@ -519,7 +520,7 @@ export default function Home() {
             </MotionBox>
           </Stack>
         </Stack>
-        <Stack marginTop={16} width={"100%"} alignItems={"center"}>
+        <Stack marginTop={20} width={"100%"} alignItems={"center"}>
           <MotionButton
             whileHover={{
               scale: 1.05,
@@ -551,10 +552,14 @@ export default function Home() {
           marginTop={[16, 24, 32]}
         >
           <Stack spacing={6}>
-            <H1 fontSize={["xl", "2xl", "3xl", "3xl"]}>
+            <H1 textAlign={"center"} fontSize={["xl", "2xl", "3xl", "3xl"]}>
               Início da sua jornada na Thrive
             </H1>
-            <Paragraph fontSize={["sm", "md", "lg", "lg"]} maxWidth={"35rem"}>
+            <Paragraph
+              textAlign={"center"}
+              fontSize={["sm", "md", "lg", "lg"]}
+              maxWidth={"40rem"}
+            >
               A Thrive conta com profissionais que, além da alta qualidade de
               entrega, atuam com um número limitado de contas, oferecendo a
               atenção que você merece
