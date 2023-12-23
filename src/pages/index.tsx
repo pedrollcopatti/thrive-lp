@@ -21,19 +21,19 @@ import {
 import onboarding from "@assets/onboarding.svg";
 import diagnosis from "@assets/diagnosis.svg";
 import logo from "@assets/logo.svg";
-import googlePartner from "@assets/google_partner.png";
-import metaBusiness from "@assets/meta_business.png";
-import metaCertified from "@assets/meta_certified.png";
+import googlePartner from "@assets/google-partner.webp";
+import metaBusiness from "@assets/meta-business.webp";
+import metaCertified from "@assets/meta-certified.webp";
 import learning from "@assets/learning.svg";
 import growth_cicle from "@assets/growth_cicle.svg";
-import mosaic from "@assets/mosaic.png";
+import mosaic from "@assets/mosaic.webp";
 import H1 from "@/components/H1";
 import Paragraph from "@/components/Paragraph";
 import Header from "@/components/Header";
 import Image from "next/image";
 import { COMPANIES, PARTNERS } from "@/constants";
 import ills from "@assets/illustration.svg";
-import funil from "@assets/funil.png";
+import funil from "@assets/funil.webp";
 import Texture from "@/components/Texture";
 import puzzle from "@assets/puzzle.svg";
 import chart from "@assets/chart.svg";
@@ -526,7 +526,7 @@ export default function Home() {
           width={"100%"}
         >
           <Badge
-            fontSize={['md', 'lg', 'xl']}
+            fontSize={["md", "lg", "xl"]}
             paddingX={6}
             paddingY={2}
             borderRadius={4}
@@ -550,7 +550,7 @@ export default function Home() {
             }}
             borderRadius={8}
             colorScheme="orange"
-            size={['md', 'lg']}
+            size={["md", "lg"]}
             border={"1px solid rgba(255, 255, 255, 0.50)"}
             background={
               "linear-gradient(92deg, #D94B00 0%, #FF5800 50.52%, #BE4200 100%)"
