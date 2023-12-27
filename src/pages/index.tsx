@@ -20,14 +20,10 @@ import {
   FaCircleChevronDown,
 } from "react-icons/fa6";
 import { GiTreasureMap, GiBattleTank, GiEyeTarget } from "react-icons/gi";
-import onboarding from "@assets/onboarding.svg";
-import diagnosis from "@assets/diagnosis.svg";
 import logo from "@assets/logo.svg";
 import googlePartner from "@assets/google-partner.webp";
 import metaBusiness from "@assets/meta-business.webp";
 import metaCertified from "@assets/meta-certified.webp";
-import learning from "@assets/learning.svg";
-import growth_cicle from "@assets/growth_cicle.svg";
 import mosaic from "@assets/mosaic.webp";
 import H1 from "@/components/H1";
 import Paragraph from "@/components/Paragraph";
@@ -207,6 +203,14 @@ export default function Home() {
           id="entrega"
         >
           <Stack spacing={6}>
+          <Badge
+              colorScheme="orange"
+              variant={"subtle"}
+              width={"fit-content"}
+              fontSize={"sm"}
+            >
+              NOSSA METODOLOGIA
+            </Badge>
             <H1 fontSize={["xl", "2xl", "3xl", "3xl"]} maxWidth={"30rem"}>
               Atraia, Envolva, Conquiste e Retenha. Conheça nosso FUNIL DE
               MARKETING INTELIGENTE
@@ -335,15 +339,52 @@ export default function Home() {
             <Image alt="chart" src={chart} />
           </Flex>
         </Stack>
+        <Stack marginTop={-16} width={"100%"} alignItems={"center"}>
+          <MotionButton
+            whileHover={{
+              scale: 1.05,
+            }}
+            _hover={{
+              background: "orange.500",
+            }}
+            borderRadius={8}
+            colorScheme="orange"
+            size={["sm", "md", "lg"]}
+            border={"1px solid rgba(255, 255, 255, 0.50)"}
+            background={
+              "linear-gradient(92deg, #D94B00 0%, #FF5800 50.52%, #BE4200 100%)"
+            }
+            color={"white.500"}
+            backgroundColor={"orange.500"}
+            fontWeight={"bold"}
+            maxWidth={"30rem"}
+            onClick={() => goTo("https://abre.ai/hGvz")}
+          >
+            FALE COM UM ESPECIALISTA
+          </MotionButton>
+        </Stack>
         <Stack
+          spacing={12}
           width={"100%"}
           alignItems={"center"}
           justifyContent={"center"}
-          textAlign={"center"}
-          spacing={12}
-          marginTop={-12}
+          marginTop={[16, 24, 32]}
+          marginY={12}
         >
-          <H1 fontSize={["2xl", "3xl", "4xl", "4xl"]}>Nossa metodologia</H1>
+          <Stack spacing={6}>
+            <H1 textAlign={"center"} fontSize={["xl", "2xl", "3xl", "3xl"]}>
+              Início da sua jornada na Thrive
+            </H1>
+            <Paragraph
+              textAlign={"center"}
+              fontSize={["sm", "md", "lg", "lg"]}
+              maxWidth={"40rem"}
+            >
+              A Thrive conta com profissionais que, além da alta qualidade de
+              entrega, atuam com um número limitado de contas, oferecendo a
+              atenção que você merece
+            </Paragraph>
+          </Stack>
           <Stack
             direction={isLargerThan1000 ? "row" : "column"}
             spacing={[4, 6, 8, 8, 12]}
@@ -519,139 +560,7 @@ export default function Home() {
               </Stack>
             </MotionBox>
           </Stack>
-        </Stack>
-        <Stack marginTop={20} width={"100%"} alignItems={"center"}>
-          <MotionButton
-            whileHover={{
-              scale: 1.05,
-            }}
-            _hover={{
-              background: "orange.500",
-            }}
-            borderRadius={8}
-            colorScheme="orange"
-            size={["sm", "md", "lg"]}
-            border={"1px solid rgba(255, 255, 255, 0.50)"}
-            background={
-              "linear-gradient(92deg, #D94B00 0%, #FF5800 50.52%, #BE4200 100%)"
-            }
-            color={"white.500"}
-            backgroundColor={"orange.500"}
-            fontWeight={"bold"}
-            maxWidth={"30rem"}
-            onClick={() => goTo("https://abre.ai/hGvz")}
-          >
-            FALE COM UM ESPECIALISTA
-          </MotionButton>
-        </Stack>
-        <Stack
-          spacing={12}
-          width={"100%"}
-          alignItems={"center"}
-          justifyContent={"center"}
-          marginTop={[16, 24, 32]}
-        >
-          <Stack spacing={6}>
-            <H1 textAlign={"center"} fontSize={["xl", "2xl", "3xl", "3xl"]}>
-              Início da sua jornada na Thrive
-            </H1>
-            <Paragraph
-              textAlign={"center"}
-              fontSize={["sm", "md", "lg", "lg"]}
-              maxWidth={"40rem"}
-            >
-              A Thrive conta com profissionais que, além da alta qualidade de
-              entrega, atuam com um número limitado de contas, oferecendo a
-              atenção que você merece
-            </Paragraph>
-          </Stack>
-          <SimpleGrid
-            width={"100%"}
-            alignItems={"center"}
-            justifyContent={"center"}
-            boxSize={"fit-content"}
-            spacing={6}
-            columns={[1, 1, 1, 2, 2, 2]}
-          >
-            <Stack
-              spacing={6}
-              bgColor={"black.300"}
-              borderRadius={6}
-              paddingX={8}
-              paddingY={6}
-              width={"fit-content"}
-              height={"15rem"}
-              justifyContent={"center"}
-            >
-              <Image alt="onboarding" src={onboarding} />
-              <Stack>
-                <H1 fontSize={["md", "lg", "xl", "2xl"]}>Onboarding</H1>
-                <Paragraph fontSize={["sm", "md", "md", "md"]} maxW={"25rem"}>
-                  Nosso time de especialistas implementa ações que trarão ganhos
-                  de curto prazo, enquanto estrutura seu plano de otimização
-                  para o longo prazo
-                </Paragraph>
-              </Stack>
-            </Stack>
-            <Stack
-              spacing={6}
-              bgColor={"black.300"}
-              borderRadius={6}
-              paddingX={8}
-              paddingY={6}
-              width={"fit-content"}
-              height={"15rem"}
-              justifyContent={"center"}
-            >
-              <Image alt="onboarding" src={diagnosis} />
-              <Stack>
-                <H1 fontSize={["md", "lg", "xl", "2xl"]}>Diagnóstico</H1>
-                <Paragraph fontSize={["sm", "md", "md", "md"]} maxW={"25rem"}>
-                  Analisamos o seu caso e apresentamos um projeto feito sob
-                  medida para sua operação
-                </Paragraph>
-              </Stack>
-            </Stack>
-            <Stack
-              spacing={6}
-              bgColor={"black.300"}
-              borderRadius={6}
-              paddingX={8}
-              paddingY={6}
-              width={"fit-content"}
-              height={"15rem"}
-              justifyContent={"center"}
-            >
-              <Image alt="onboarding" src={learning} />
-              <Stack>
-                <H1 fontSize={["md", "lg", "xl", "2xl"]}>Aprendizado</H1>
-                <Paragraph fontSize={["sm", "md", "md", "md"]} maxW={"25rem"}>
-                  Validamos as ações implementadas e estudamos próximos passos
-                </Paragraph>
-              </Stack>
-            </Stack>
-            <Stack
-              spacing={6}
-              bgColor={"black.300"}
-              borderRadius={6}
-              paddingX={8}
-              paddingY={6}
-              width={"fit-content"}
-              height={"15rem"}
-              justifyContent={"center"}
-            >
-              <Image alt="onboarding" src={growth_cicle} />
-              <Stack>
-                <H1 fontSize={["md", "lg", "xl", "2xl"]}>
-                  Ciclo de crescimento
-                </H1>
-                <Paragraph fontSize={["sm", "md", "md", "md"]} maxW={"25rem"}>
-                  Otimização e escala contínua dos resultados de sua operação de
-                  mídia feita pelos especialistas da Thrive.
-                </Paragraph>
-              </Stack>
-            </Stack>
-          </SimpleGrid>
+
         </Stack>
         <Stack
           align={"center"}

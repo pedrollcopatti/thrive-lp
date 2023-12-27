@@ -1,6 +1,6 @@
-import embelleze from "@assets/embelleze.webp";
-import microlins from "@assets/microlins.webp";
 import oakberry from "@assets/oakberry.webp";
+import hcc from "@assets/hcc.webp"
+import ecobill from '@assets/ecobill.webp'
 import oralunic from "@assets/oralunic.webp";
 import sorridents from "@assets/sorridents.webp";
 import subway from "@assets/subway.webp";
@@ -19,9 +19,9 @@ export const COMPANIES = [
   { img: wiseup, w: 175, h: 40 },
   { img: wizard, w: 175, h: 40 },
   { img: oralunic, w: 175, h: 40 },
-  { img: embelleze, w: 175, h: 40 },
+  { img: hcc, w: 140, h: 40 },
   { img: sorridents, w: 125, h: 40 },
-  { img: microlins, w: 75, h: 40 },
+  { img: ecobill, w: 150, h: 40 },
   { img: oakberry, w: 75, h: 40 },
 ];
 
