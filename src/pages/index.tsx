@@ -132,6 +132,11 @@ export default function Home() {
               backgroundColor={"orange.500"}
               fontWeight={"bold"}
               maxWidth={"20rem"}
+              onClick={() =>
+                goTo(
+                  "https://api.whatsapp.com/send?phone=555581188765&text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações,%20pode%20me%20ajudar"
+                )
+              }
             >
               RECEBER PROPOSTA EM 5 MIN
             </MotionButton>
@@ -203,7 +208,7 @@ export default function Home() {
           id="entrega"
         >
           <Stack spacing={6}>
-          <Badge
+            <Badge
               colorScheme="orange"
               variant={"subtle"}
               width={"fit-content"}
@@ -232,7 +237,11 @@ export default function Home() {
               colorScheme="orange"
               alignItems={"center"}
               rightIcon={<FaCircleChevronRight />}
-              onClick={() => goTo("https://abre.ai/hGvz")}
+              onClick={() =>
+                goTo(
+                  "https://api.whatsapp.com/send?phone=555581188765&text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações,%20pode%20me%20ajudar"
+                )
+              }
             >
               Falar com a Thrive
             </Button>
@@ -289,7 +298,11 @@ export default function Home() {
               variant={"ghost"}
               colorScheme="orange"
               rightIcon={<FaCircleChevronRight />}
-              onClick={() => goTo("https://abre.ai/hGvz")}
+              onClick={() =>
+                goTo(
+                  "https://api.whatsapp.com/send?phone=555581188765&text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações,%20pode%20me%20ajudar"
+                )
+              }
             >
               Falar com a Thrive
             </Button>
@@ -358,7 +371,11 @@ export default function Home() {
             backgroundColor={"orange.500"}
             fontWeight={"bold"}
             maxWidth={"30rem"}
-            onClick={() => goTo("https://abre.ai/hGvz")}
+            onClick={() =>
+              goTo(
+                "https://api.whatsapp.com/send?phone=555581188765&text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações,%20pode%20me%20ajudar"
+              )
+            }
           >
             FALE COM UM ESPECIALISTA
           </MotionButton>
@@ -560,7 +577,6 @@ export default function Home() {
               </Stack>
             </MotionBox>
           </Stack>
-
         </Stack>
         <Stack
           align={"center"}
@@ -660,7 +676,11 @@ export default function Home() {
             backgroundColor={"orange.500"}
             fontWeight={"bold"}
             maxWidth={"30rem"}
-            onClick={() => goTo("https://abre.ai/hGvz")}
+            onClick={() =>
+              goTo(
+                "https://api.whatsapp.com/send?phone=555581188765&text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações,%20pode%20me%20ajudar"
+              )
+            }
           >
             FALE COM UM ESPECIALISTA
           </MotionButton>

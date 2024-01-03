@@ -6,10 +6,9 @@ import { Link } from "react-scroll";
 import { goTo } from "@/utils";
 
 export default function Header() {
-  const [isLargerThan1000] = useMediaQuery('(min-width: 1000px)')
+  const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
 
-
-  if(isLargerThan1000){
+  if (isLargerThan1000) {
     return (
       <HStack
         zIndex={999}
@@ -57,7 +56,11 @@ export default function Header() {
             color={"white.500"}
             backgroundColor={"orange.500"}
             fontWeight={"bold"}
-            onClick={() => goTo("https://abre.ai/hGvz")}
+            onClick={() =>
+              goTo(
+                "https://api.whatsapp.com/send?phone=555581188765&text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações,%20pode%20me%20ajudar"
+              )
+            }
           >
             FALAR COM A THRIVE
           </Button>
@@ -68,18 +71,17 @@ export default function Header() {
 
   return (
     <HStack
-    zIndex={999}
-    bgColor={"black.500"}
-    top={0}
-    width={"100%"}
-    alignItems={'center'}
-    justifyContent={'center'}
-    height={24}
-  >
-     <Flex width={36}>
-          <Image alt="logo" src={logo} />
-        </Flex>
-  </HStack>
-  )
-
+      zIndex={999}
+      bgColor={"black.500"}
+      top={0}
+      width={"100%"}
+      alignItems={"center"}
+      justifyContent={"center"}
+      height={24}
+    >
+      <Flex width={36}>
+        <Image alt="logo" src={logo} />
+      </Flex>
+    </HStack>
+  );
 }
