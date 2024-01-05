@@ -26,6 +26,7 @@ export default function Header() {
         <HStack>
           <Link to="entrega" smooth offset={-24}>
             <Button
+              zIndex={1200}
               _hover={{ backgroundColor: "black.50" }}
               color={"white"}
               fontSize={"sm"}
@@ -36,6 +37,7 @@ export default function Header() {
           </Link>
           <Link to="thrive" smooth offset={-150}>
             <Button
+              zIndex={1200}
               _hover={{ backgroundColor: "black.50" }}
               color={"white"}
               fontSize={"sm"}
@@ -45,6 +47,7 @@ export default function Header() {
             </Button>
           </Link>
           <Button
+            zIndex={1200}
             _hover={{
               background: "orange.500",
             }}

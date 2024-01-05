@@ -95,7 +95,7 @@ export default function Home() {
           direction={isLargerThan1000 ? "row" : "column"}
           overflow={"hidden"}
           height={isLargerThan1000 ? "35rem" : "fit-content"}
-          marginTop={isLargerThan1000 ? 0 : [8, 12, 12, 18]}
+          marginTop={isLargerThan1000 ? 0 : [24, 12, 12, 18]}
         >
           <Stack
             alignItems={isLargerThan1000 ? "initial" : "center"}
@@ -123,7 +123,7 @@ export default function Home() {
               }}
               borderRadius={8}
               colorScheme="orange"
-              size={["sm", "sm", "md", "md", "lg"]}
+              size={["md", "md", "lg"]}
               border={"1px solid rgba(255, 255, 255, 0.50)"}
               background={
                 "linear-gradient(92deg, #D94B00 0%, #FF5800 50.52%, #BE4200 100%)"
@@ -210,8 +210,10 @@ export default function Home() {
           <Stack spacing={6}>
             <Badge
               colorScheme="orange"
-              variant={"subtle"}
+              backgroundColor={"#FF580050"}
+              color={"orange.500"}
               width={"fit-content"}
+              variant={"subtle"}
               fontSize={"sm"}
             >
               NOSSA METODOLOGIA
@@ -228,6 +230,7 @@ export default function Home() {
               envolvente.
             </Paragraph>
             <Button
+              zIndex={1200}
               _hover={{
                 backgroundColor: "orange.500",
                 color: "white",
@@ -270,6 +273,8 @@ export default function Home() {
             <Badge
               colorScheme="orange"
               variant={"subtle"}
+              backgroundColor={"#FF580050"}
+              color={"orange.500"}
               width={"fit-content"}
               fontSize={"sm"}
             >
@@ -290,6 +295,7 @@ export default function Home() {
               ideias certas se conectam, tudo é possível.
             </Paragraph>
             <Button
+              zIndex={1200}
               _hover={{
                 backgroundColor: "orange.500",
                 color: "white",
