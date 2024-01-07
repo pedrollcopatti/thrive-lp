@@ -9,6 +9,7 @@ import {
   IconButton,
   SimpleGrid,
   Stack,
+  Text,
   useMediaQuery,
 } from "@chakra-ui/react";
 import {
@@ -40,7 +41,9 @@ import { goTo } from "@/utils";
 
 export default function Home() {
   const MotionBox = motion(Box);
+  const MotionText = motion(Text);
   const MotionButton = motion(Button);
+  const MotionStack = motion(Stack);
   const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
   return (
     <>
@@ -97,7 +100,22 @@ export default function Home() {
           height={isLargerThan1000 ? "35rem" : "fit-content"}
           marginTop={isLargerThan1000 ? 0 : [24, 12, 12, 18]}
         >
-          <Stack
+          <MotionStack
+            initial={{
+              opacity: 0,
+              x: -15,
+            }}
+            viewport={{
+              once: true,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                delay: 0.5,
+                duration: 1,
+              },
+            }}
             alignItems={isLargerThan1000 ? "initial" : "center"}
             textAlign={isLargerThan1000 ? "initial" : "center"}
             paddingX={[4, 6, 8, 12, 18, 24]}
@@ -108,13 +126,53 @@ export default function Home() {
               Geração de Leads <br /> para times comerciais
             </H1>
             <Paragraph
-              fontSize={["sm", "md"]}
+              fontSize={"md"}
               maxWidth={isLargerThan1000 ? "100%" : ["90%", "80%", "60%"]}
             >
-              Garantimos que o seu time de vendas receba um caminhão de demanda,
-              todos os dias e foque apenas no que realmente importa... vender.
+              Garantimos que o seu time de vendas receba um{" "}
+              <MotionText
+                whileInView={{
+                  color: ["#FFFFFFA3", "#FFF"],
+                  transition: {
+                    delay: 1,
+                    duration: 1,
+                  },
+                }}
+                as="span"
+              >
+                caminhão de demanda
+              </MotionText>
+              , todos os dias e foque apenas no que realmente importa...{" "}
+              <MotionText
+                whileInView={{
+                  color: ["#FFFFFFA3", "#FFF"],
+                  transition: {
+                    delay: 1,
+                    duration: 1,
+                  },
+                }}
+                as="span"
+              >
+                {" "}
+                vender.
+              </MotionText>
             </Paragraph>
             <MotionButton
+              initial={{
+                opacity: 0,
+                x: -15,
+              }}
+              viewport={{
+                once: true,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+                transition: {
+                  delay: 1,
+                  duration: 1,
+                },
+              }}
               whileHover={{
                 x: 10,
               }}
@@ -140,7 +198,7 @@ export default function Home() {
             >
               RECEBER PROPOSTA EM 5 MIN
             </MotionButton>
-          </Stack>
+          </MotionStack>
           <Flex
             maxW={isLargerThan1000 ? "45rem" : "100%"}
             marginTop={isLargerThan1000 ? -12 : [-12, -24, -32]}
@@ -154,7 +212,22 @@ export default function Home() {
             <Image alt="illustration" src={ills} />
           </Flex>
         </Stack>
-        <Stack
+        <MotionStack
+          initial={{
+            opacity: 0,
+            y: 10,
+          }}
+          viewport={{
+            once: true,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delay: 0.5,
+              duration: 1,
+            },
+          }}
           marginTop={[6, 8, 12, 18, 24]}
           paddingX={[4, 6, 8, 12, 18, 24]}
           width={"100%"}
@@ -197,8 +270,23 @@ export default function Home() {
             borderWidth={0.5}
             borderRadius={"full"}
           />
-        </Stack>
-        <Stack
+        </MotionStack>
+        <MotionStack
+          initial={{
+            opacity: 0,
+            y: 10,
+          }}
+          viewport={{
+            once: true,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delay: 0.5,
+              duration: 1,
+            },
+          }}
           justifyContent={"space-between"}
           alignItems={"center"}
           paddingX={[4, 6, 8, 12, 18, 24]}
@@ -259,8 +347,23 @@ export default function Home() {
           >
             <Image alt="funil" src={funil} />
           </Flex>
-        </Stack>
-        <Stack
+        </MotionStack>
+        <MotionStack
+          initial={{
+            opacity: 0,
+            y: 10,
+          }}
+          viewport={{
+            once: true,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delay: 0.5,
+              duration: 1,
+            },
+          }}
           justifyContent={"space-between"}
           alignItems={"center"}
           paddingX={[4, 6, 8, 12, 18, 24]}
@@ -326,8 +429,23 @@ export default function Home() {
               <Image alt="puzzle" src={puzzle} />
             </Flex>
           </Flex>
-        </Stack>
-        <Stack
+        </MotionStack>
+        <MotionStack
+          initial={{
+            opacity: 0,
+            y: 10,
+          }}
+          viewport={{
+            once: true,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delay: 0.5,
+              duration: 1,
+            },
+          }}
           justifyContent={"space-between"}
           alignItems={"center"}
           paddingX={[4, 6, 8, 12, 18, 24]}
@@ -357,8 +475,27 @@ export default function Home() {
           >
             <Image alt="chart" src={chart} />
           </Flex>
-        </Stack>
-        <Stack marginTop={-16} width={"100%"} alignItems={"center"}>
+        </MotionStack>
+        <MotionStack
+          initial={{
+            opacity: 0,
+            y: 10,
+          }}
+          viewport={{
+            once: true,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delay: 0.5,
+              duration: 1,
+            },
+          }}
+          marginTop={-16}
+          width={"100%"}
+          alignItems={"center"}
+        >
           <MotionButton
             whileHover={{
               scale: 1.05,
@@ -385,8 +522,23 @@ export default function Home() {
           >
             FALE COM UM ESPECIALISTA
           </MotionButton>
-        </Stack>
-        <Stack
+        </MotionStack>
+        <MotionStack
+          initial={{
+            opacity: 0,
+            y: 10,
+          }}
+          viewport={{
+            once: true,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delay: 0.5,
+              duration: 1,
+            },
+          }}
           spacing={12}
           width={"100%"}
           alignItems={"center"}
@@ -583,8 +735,23 @@ export default function Home() {
               </Stack>
             </MotionBox>
           </Stack>
-        </Stack>
-        <Stack
+        </MotionStack>
+        <MotionStack
+          initial={{
+            opacity: 0,
+            y: 10,
+          }}
+          viewport={{
+            once: true,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delay: 0.5,
+              duration: 1,
+            },
+          }}
           align={"center"}
           justifyContent={"space-between"}
           direction={isLargerThan1000 ? "row" : "column"}
@@ -640,8 +807,23 @@ export default function Home() {
               </Flex>
             ))}
           </SimpleGrid>
-        </Stack>
-        <Stack
+        </MotionStack>
+        <MotionStack
+          initial={{
+            opacity: 0,
+            y: 10,
+          }}
+          viewport={{
+            once: true,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delay: 0.5,
+              duration: 1,
+            },
+          }}
           marginTop={[16, 24, 32]}
           paddingX={[4, 6, 8, 12, 18, 24]}
           spacing={12}
@@ -662,8 +844,27 @@ export default function Home() {
           <Flex width={["100%", "100%", "90%", "80%", "80%"]}>
             <Image alt="moisac" src={mosaic} />
           </Flex>
-        </Stack>
-        <Stack marginTop={24} width={"100%"} alignItems={"center"}>
+        </MotionStack>
+        <MotionStack
+          initial={{
+            opacity: 0,
+            y: 10,
+          }}
+          viewport={{
+            once: true,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delay: 0.5,
+              duration: 1,
+            },
+          }}
+          marginTop={24}
+          width={"100%"}
+          alignItems={"center"}
+        >
           <MotionButton
             whileHover={{
               scale: 1.05,
@@ -690,7 +891,7 @@ export default function Home() {
           >
             FALE COM UM ESPECIALISTA
           </MotionButton>
-        </Stack>
+        </MotionStack>
         <Stack
           alignItems={isLargerThan1000 ? "end" : "start"}
           direction={isLargerThan1000 ? "row" : "column"}
