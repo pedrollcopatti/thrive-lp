@@ -192,7 +192,7 @@ export default function Home() {
               maxWidth={"20rem"}
               onClick={() =>
                 goTo(
-                  "https://api.whatsapp.com/send?phone=555581188765&text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações,%20pode%20me%20ajudar"
+                  "https://api.whatsapp.com/send?phone=555581188765&text=Ol%C3%A1,%20eu%20gostaria%20de%20receber%20minha%20proposta%20em%205%20minutos.%20Poderia%20me%20ajudar?"
                 )
               }
             >
