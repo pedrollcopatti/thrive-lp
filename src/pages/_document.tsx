@@ -1,3 +1,4 @@
+import BodyGTM from "@/components/GTM/BodyGTM";
 import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
@@ -16,6 +17,7 @@ export default function Document() {
         />
       </Head>
       <body>
+        <BodyGTM />
         <Main />
         <NextScript />
       </body>
