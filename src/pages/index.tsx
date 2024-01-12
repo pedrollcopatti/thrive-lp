@@ -30,7 +30,7 @@ import H1 from "@/components/H1";
 import Paragraph from "@/components/Paragraph";
 import Header from "@/components/Header";
 import Image from "next/image";
-import { COMPANIES, PARTNERS } from "@/constants";
+import { COMPANIES, PARTNERS, TESTMONIALS } from "@/constants";
 import ills from "@assets/illustration.svg";
 import funil from "@assets/funil.webp";
 import Texture from "@/components/Texture";
@@ -38,6 +38,7 @@ import puzzle from "@assets/puzzle.svg";
 import chart from "@assets/chart.svg";
 import { motion } from "framer-motion";
 import { goTo } from "@/utils";
+import Testimonial from "@/components/Testimonial";
 
 export default function Home() {
   const MotionBox = motion(Box);
@@ -599,10 +600,12 @@ export default function Home() {
                 icon={<GiEyeTarget />}
                 variant={"ghost"}
               />
-              <Stack marginTop={16}>
+              <Stack marginTop={8}>
                 <H1 fontSize={["md", "lg", "xl", "2xl"]}>Diagnóstico</H1>
                 <Paragraph fontSize={["sm", "md", "md", "md"]} maxW={"25rem"}>
-                  Visão de negócio e definição de meta
+                  Conduzimos uma análise profunda para compreender seu negócio,
+                  identificar pontos de melhoria e definir metas alinhadas com
+                  sua visão estratégica.
                 </Paragraph>
               </Stack>
             </MotionBox>
@@ -663,10 +666,12 @@ export default function Home() {
                 icon={<GiTreasureMap />}
                 variant={"ghost"}
               />
-              <Stack marginTop={16}>
+              <Stack marginTop={8}>
                 <H1 fontSize={["md", "lg", "xl", "2xl"]}>Plano de guerra</H1>
                 <Paragraph fontSize={["sm", "md", "md", "md"]} maxW={"25rem"}>
-                  Planejamento e definição de prazos
+                  Elaboramos estratégias personalizadas, detalhando um plano
+                  eficiente com prazos claros, otimizando recursos para alcançar
+                  seus objetivos.
                 </Paragraph>
               </Stack>
             </MotionBox>
@@ -727,15 +732,57 @@ export default function Home() {
                 icon={<GiBattleTank />}
                 variant={"ghost"}
               />
-              <Stack marginTop={16}>
+              <Stack marginTop={8}>
                 <H1 fontSize={["md", "lg", "xl", "2xl"]}>Campo de batalha</H1>
                 <Paragraph fontSize={["sm", "md", "md", "md"]} maxW={"25rem"}>
-                  Execução
+                  Partimos para a execução, implementando as estratégias com
+                  foco em performance de vendas. Ajustamos dinamicamente
+                  conforme necessário para garantir resultados exponenciais.
                 </Paragraph>
               </Stack>
             </MotionBox>
           </Stack>
+          <Paragraph
+              textAlign={"center"}
+              fontSize={["sm", "md", "lg", "lg"]}
+              maxWidth={"40rem"}
+              fontWeight={'bold'}
+            >
+            Com a Thrive, cada passo é preciso, impulsionando seu negócio rumo ao sucesso.
+            </Paragraph>
         </MotionStack>
+        <MotionStack
+          initial={{
+            opacity: 0,
+            y: 10,
+          }}
+          viewport={{
+            once: true,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delay: 0.5,
+              duration: 1,
+            },
+          }}
+          paddingX={[4, 6, 8, 12, 18, 24]}
+          marginTop={[12, 16, 32]}
+          width="100%"
+          align={"center"}
+          spacing={12}
+        >
+          <H1 textAlign={"center"} fontSize={["xl", "2xl", "3xl", "3xl"]}>
+            O que estão falando sobre a Thrive:
+          </H1>
+          <SimpleGrid columns={[1, 1, 1, 3]} spacing={8}>
+            {TESTMONIALS.map((test) => (
+              <Testimonial key={test.name} {...test} />
+            ))}
+          </SimpleGrid>
+        </MotionStack>
+
         <MotionStack
           initial={{
             opacity: 0,

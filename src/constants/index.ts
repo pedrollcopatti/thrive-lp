@@ -57,3 +57,19 @@ export const PARTNERS = [
     h: 40,
   },
 ];
+
+
+export const TESTMONIALS = [
+  {
+    name: "Carlos Rodrigues - CEO Ajustsul Solar",
+    text: "Trabalhar com a Thrive foi um divisor de águas para nossa empresa de energia solar. Suas estratégias de tráfego e performance em vendas, impulsionaram nossas vendas de kits solares de maneira que nunca imaginávamos. O tratamento personalizado, combinada com análises de dados precisas, resultou em um crescimento significativo. Recomendamos a Thrive para quem busca resultados concretos e um parceiro comprometido.",
+  },
+  {
+    name: "Daniel Marques - Franqueado Wizard",
+    text: "A parceria com a Thrive trouxe uma transformação positiva para nossa escola. Sua expertise em performance e martech foi fundamental para impulsionar nossa presença online e atrair novos alunos. Com estratégias eficazes e análises precisas, a Thrive contribuiu diretamente para o aumento no número de matrículas. Recomendamos a Thrive a todas as instituições educacionais que buscam crescer e se destacar no ambiente digital.",
+  },
+  {
+    name: "Carla Maia - Franqueada Sorridents",
+    text: "A experiência com a Thrive foi excepcional para nossa clínica odontológica. Sua abordagem estratégica e soluções personalizadas foram muito importantes para fortalecer nossa presença online e atrair novos pacientes. Graças à parceria com a Thrive, tivemos um grande aumento na visibilidade digital e na marca, resultando em um crescimento significativo na nossa base de pacientes. Recomendamos a Thrive a todas as clínicas que buscam se destacar no mundo digital e impulsionar o sucesso do negócio.",
+  },
+];
