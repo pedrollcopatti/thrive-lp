@@ -1,6 +1,6 @@
 import oakberry from "@assets/oakberry.webp";
-import hcc from "@assets/hcc.webp"
-import ecobill from '@assets/ecobill.webp'
+import hcc from "@assets/hcc.webp";
+import ecobill from "@assets/ecobill.webp";
 import oralunic from "@assets/oralunic.webp";
 import sorridents from "@assets/sorridents.webp";
 import subway from "@assets/subway.webp";
@@ -58,7 +58,6 @@ export const PARTNERS = [
   },
 ];
 
-
 export const TESTMONIALS = [
   {
     name: "Carlos Rodrigues - CEO Ajustsul Solar",
@@ -73,3 +72,6 @@ export const TESTMONIALS = [
     text: "A experiência com a Thrive foi excepcional para nossa clínica odontológica. Sua abordagem estratégica e soluções personalizadas foram muito importantes para fortalecer nossa presença online e atrair novos pacientes. Graças à parceria com a Thrive, tivemos um grande aumento na visibilidade digital e na marca, resultando em um crescimento significativo na nossa base de pacientes. Recomendamos a Thrive a todas as clínicas que buscam se destacar no mundo digital e impulsionar o sucesso do negócio.",
   },
 ];
+
+export const LINK_WPP =
+  "https://api.whatsapp.com/send?phone=554196452023&text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações,%20pode%20me%20ajudar";

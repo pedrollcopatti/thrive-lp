@@ -4,6 +4,7 @@ import logo from "@assets/logo.svg";
 import Image from "next/image";
 import { Link } from "react-scroll";
 import { goTo } from "@/utils";
+import { LINK_WPP } from "@/constants";
 
 export default function Header() {
   const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
@@ -59,11 +60,7 @@ export default function Header() {
             color={"white.500"}
             backgroundColor={"orange.500"}
             fontWeight={"bold"}
-            onClick={() =>
-              goTo(
-                "https://api.whatsapp.com/send?phone=555581188765&text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações,%20pode%20me%20ajudar"
-              )
-            }
+            onClick={() => goTo(LINK_WPP)}
           >
             FALAR COM A THRIVE
           </Button>

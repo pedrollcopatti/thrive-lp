@@ -30,7 +30,7 @@ import H1 from "@/components/H1";
 import Paragraph from "@/components/Paragraph";
 import Header from "@/components/Header";
 import Image from "next/image";
-import { COMPANIES, PARTNERS, TESTMONIALS } from "@/constants";
+import { COMPANIES, LINK_WPP, PARTNERS, TESTMONIALS } from "@/constants";
 import ills from "@assets/illustration.svg";
 import funil from "@assets/funil.webp";
 import Texture from "@/components/Texture";
@@ -191,11 +191,7 @@ export default function Home() {
               backgroundColor={"orange.500"}
               fontWeight={"bold"}
               maxWidth={"20rem"}
-              onClick={() =>
-                goTo(
-                  "https://api.whatsapp.com/send?phone=555581188765&text=Ol%C3%A1,%20eu%20gostaria%20de%20receber%20minha%20proposta%20em%205%20minutos.%20Poderia%20me%20ajudar?"
-                )
-              }
+              onClick={() => goTo(LINK_WPP)}
             >
               RECEBER PROPOSTA EM 5 MIN
             </MotionButton>
@@ -329,11 +325,7 @@ export default function Home() {
               colorScheme="orange"
               alignItems={"center"}
               rightIcon={<FaCircleChevronRight />}
-              onClick={() =>
-                goTo(
-                  "https://api.whatsapp.com/send?phone=555581188765&text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações,%20pode%20me%20ajudar"
-                )
-              }
+              onClick={() => goTo(LINK_WPP)}
             >
               Falar com a Thrive
             </Button>
@@ -408,11 +400,7 @@ export default function Home() {
               variant={"ghost"}
               colorScheme="orange"
               rightIcon={<FaCircleChevronRight />}
-              onClick={() =>
-                goTo(
-                  "https://api.whatsapp.com/send?phone=555581188765&text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações,%20pode%20me%20ajudar"
-                )
-              }
+              onClick={() => goTo(LINK_WPP)}
             >
               Falar com a Thrive
             </Button>
@@ -515,11 +503,7 @@ export default function Home() {
             backgroundColor={"orange.500"}
             fontWeight={"bold"}
             maxWidth={"30rem"}
-            onClick={() =>
-              goTo(
-                "https://api.whatsapp.com/send?phone=555581188765&text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações,%20pode%20me%20ajudar"
-              )
-            }
+            onClick={() => goTo(LINK_WPP)}
           >
             FALE COM UM ESPECIALISTA
           </MotionButton>
@@ -743,13 +727,14 @@ export default function Home() {
             </MotionBox>
           </Stack>
           <Paragraph
-              textAlign={"center"}
-              fontSize={["sm", "md", "lg", "lg"]}
-              maxWidth={"40rem"}
-              fontWeight={'bold'}
-            >
-            Com a Thrive, cada passo é preciso, impulsionando seu negócio rumo ao sucesso.
-            </Paragraph>
+            textAlign={"center"}
+            fontSize={["sm", "md", "lg", "lg"]}
+            maxWidth={"40rem"}
+            fontWeight={"bold"}
+          >
+            Com a Thrive, cada passo é preciso, impulsionando seu negócio
+            rumo ao sucesso.
+          </Paragraph>
         </MotionStack>
         <MotionStack
           initial={{
@@ -930,11 +915,7 @@ export default function Home() {
             backgroundColor={"orange.500"}
             fontWeight={"bold"}
             maxWidth={"30rem"}
-            onClick={() =>
-              goTo(
-                "https://api.whatsapp.com/send?phone=555581188765&text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações,%20pode%20me%20ajudar"
-              )
-            }
+            onClick={() => goTo(LINK_WPP)}
           >
             FALE COM UM ESPECIALISTA
           </MotionButton>
