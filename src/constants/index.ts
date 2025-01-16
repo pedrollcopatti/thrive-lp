@@ -74,4 +74,4 @@ export const TESTMONIALS = [
 ];
 
 export const LINK_WPP =
-  "https://api.whatsapp.com/send?phone=5579981385583&text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações,%20pode%20me%20ajudar";
+  "https://api.whatsapp.com/send?phone=5579981385583&text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações,%20pode%20me%20ajudar?";
